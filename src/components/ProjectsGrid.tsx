@@ -34,7 +34,7 @@ export function ProjectsGrid() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <Link
-                href={`/projetos/${project.slug}`}
+                href={`/projects/${project.slug}`}
                 className="group block h-full p-6 rounded-xl border border-zinc-800/80 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-blue-500/50 transition-all duration-300 relative overflow-hidden"
               >
                 <div className="flex items-center justify-between mb-4">
