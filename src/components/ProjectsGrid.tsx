@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "motion/react";
 import { ArrowUpRight, FolderGit2 } from "lucide-react";
 import { projects } from "@/data/projects";
@@ -35,33 +36,47 @@ export function ProjectsGrid() {
             >
               <Link
                 href={`/projects/${project.slug}`}
-                className="group block h-full p-6 rounded-xl border border-zinc-800/80 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-blue-500/50 transition-all duration-300 relative overflow-hidden"
+                className="group flex flex-col h-full rounded-xl border border-zinc-800/80 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-blue-500/50 transition-all duration-300 overflow-hidden"
               >
-                <div className="flex items-center justify-between mb-4">
-                  <FolderGit2 className="text-blue-400" size={24} />
-                  <ArrowUpRight
-                    className="text-zinc-500 group-hover:text-blue-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
-                    size={20}
-                  />
-                </div>
+                {project.imageUrl && (
+                  <div className="relative w-full h-44 bg-zinc-950 border-b border-zinc-800/60 overflow-hidden">
+                    <Image
+                      src={project.imageUrl}
+                      alt={project.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                )}
 
-                <h4 className="text-xl font-bold text-zinc-100 group-hover:text-blue-300 transition-colors mb-2">
-                  {project.title}
-                </h4>
+                <div className="p-6 flex-1 flex flex-col">
+                  <div className="flex items-center justify-between mb-4">
+                    <FolderGit2 className="text-blue-400" size={24} />
+                    <ArrowUpRight
+                      className="text-zinc-500 group-hover:text-blue-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
+                      size={20}
+                    />
+                  </div>
 
-                <p className="text-sm text-zinc-400 mb-6 line-clamp-3 leading-relaxed">
-                  {project.description}
-                </p>
+                  <h4 className="text-xl font-bold text-zinc-100 group-hover:text-blue-300 transition-colors mb-2">
+                    {project.title}
+                  </h4>
 
-                <div className="flex flex-wrap gap-2 mt-auto">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-2.5 py-1 text-xs font-mono rounded bg-zinc-800/80 text-zinc-300 border border-zinc-700/50"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                  <p className="text-sm text-zinc-400 mb-6 line-clamp-3 leading-relaxed">
+                    {project.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2 mt-auto">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2.5 py-1 text-xs font-mono rounded bg-zinc-800/80 text-zinc-300 border border-zinc-700/50"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </Link>
             </motion.div>
