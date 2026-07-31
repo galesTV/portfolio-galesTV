@@ -5,6 +5,7 @@ export interface Project {
   role: string;
   period: string;
   imageUrl?: string;
+  color?: string;
   description: string;
   fullDescription: string;
   tags: string[];
@@ -19,6 +20,7 @@ export const projects: Project[] = [
   {
     slug: "orquestra-queue-system",
     title: "Orquestra Queue System",
+    color: "#0a3884",
     tagline:
       "Sistema distribuído de gerenciamento e orquestração de filas de atendimento em tempo real.",
     role: "Desenvolvedor Backend / Architect",
@@ -53,6 +55,7 @@ export const projects: Project[] = [
   {
     slug: "furafila-digital",
     title: "FuraFila Digital",
+    color: "#ffba80",
     tagline:
       "Plataforma Web Full-Stack para gestão e pedidos antecipados em cantinas escolares.",
     role: "Desenvolvedor Full-Stack",
@@ -73,6 +76,7 @@ export const projects: Project[] = [
   {
     slug: "copa-do-mundo",
     title: "Copa do Mundo",
+    color: "#0c38be",
     tagline:
       "Projeto sobre a Copa do Mundo de 2026, com direito a álbum de figurinhas, histórico das copas, escalação de jogadores, quiz interativo e simulador da copa.",
     role: "Desenvolvedor Front-End",
@@ -95,6 +99,7 @@ export const projects: Project[] = [
   {
     slug: "lendas-nacionais",
     title: "Lendas Nacionais",
+    color: "#b80000",
     tagline:
       "Projeto sobre Roberto Rivelino e Sônia Braga, com direito a curiosidades, momentos marcantes, vídeos, linha do tempo e quiz interativo.",
     role: "Desenvolvedor Front-End",
@@ -116,6 +121,7 @@ export const projects: Project[] = [
   {
     slug: "finwise",
     title: "FinWise",
+    color: "#eab308",
     tagline:
       "Plataforma de gestão financeira pessoal com análise de gastos e planejamento de metas.",
     role: "Desenvolvedor Full-Stack",
