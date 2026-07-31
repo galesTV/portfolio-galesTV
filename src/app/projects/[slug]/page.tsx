@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import {
   ArrowLeft,
@@ -92,6 +93,19 @@ export default async function ProjectDetails(props: {
             )}
           </div>
         </div>
+
+        {project.imageUrl && (
+          <div className="relative w-full h-64 md:h-105 rounded-2xl overflow-hidden border border-zinc-800/80 mb-12 shadow-2xl">
+            <Image
+              src={project.imageUrl}
+              alt={project.title}
+              fill
+              sizes="(max-width: 896px) 100vw, 896px"
+              className="object-cover object-top"
+              priority
+            />
+          </div>
+        )}
 
         <div className="space-y-12">
           <section className="bg-zinc-900/30 border border-zinc-800/60 rounded-xl p-6 md:p-8">
