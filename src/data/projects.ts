@@ -73,7 +73,7 @@ export const projects: Project[] = [
     tagline:
       "Plataforma de gestão financeira pessoal com análise de gastos e planejamento de metas.",
     role: "Desenvolvedor Full-Stack",
-    period: "2026",
+    period: "2025",
     description:
       "Sistema para auxiliar na gestão financeira pessoal, permitindo o acompanhamento de gastos, análise de despesas e planejamento de metas financeiras.",
     fullDescription:
@@ -85,6 +85,7 @@ export const projects: Project[] = [
       "React Native",
       "Express",
     ],
+    liveUrl: "https://finwise-orcin.vercel.app/",
     features: [
       "Gestão de despesas e receitas",
       "Análise de gastos por categoria",
