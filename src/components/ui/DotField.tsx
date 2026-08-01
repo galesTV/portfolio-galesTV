@@ -98,6 +98,8 @@ export const DotField = memo(
       }
 
       function doResize() {
+        if (!ctx) return;
+
         const parent = canvas?.parentElement;
         if (!parent) return;
         const rect = parent.getBoundingClientRect();
