@@ -7,6 +7,7 @@ import {
   CheckCircle2,
   Layers,
   Cpu,
+  ImageIcon,
 } from "lucide-react";
 import { projects } from "@/data/projects";
 
@@ -94,17 +95,56 @@ export default async function ProjectDetails(props: {
           </div>
         </div>
 
-        {project.imageUrl && (
-          <div className="relative w-full h-64 md:h-105 rounded-2xl overflow-hidden border border-zinc-800/80 mb-12 shadow-2xl">
-            <Image
-              src={project.imageUrl}
-              alt={project.title}
-              fill
-              sizes="(max-width: 896px) 100vw, 896px"
-              className="object-cover object-top"
-              priority
-            />
-          </div>
+        {project.gallery && project.gallery.length > 0 ? (
+          <section className="mb-12 space-y-8">
+            <h2 className="text-lg font-semibold text-zinc-200 flex items-center gap-2">
+              <ImageIcon size={18} className="text-blue-400" />
+              Demonstração Visual
+            </h2>
+
+            <div className="grid grid-cols-1 gap-8">
+              {project.gallery.map((item, idx) => (
+                <figure
+                  key={idx}
+                  className="group rounded-2xl bg-zinc-900/40 border border-zinc-800/80 overflow-hidden shadow-xl"
+                >
+                  <div className="relative w-full bg-zinc-950">
+                    <Image
+                      src={item.url}
+                      alt={
+                        item.caption || `${project.title} - Imagem ${idx + 1}`
+                      }
+                      width={1200}
+                      height={675}
+                      className="w-full h-auto object-cover rounded-t-2xl transition-transform duration-300 group-hover:scale-[1.005]"
+                      priority={idx === 0}
+                    />
+                  </div>
+                  {item.caption && (
+                    <figcaption className="p-4 border-t border-zinc-800/60 bg-zinc-900/60 text-xs md:text-sm text-zinc-400 font-mono flex items-center gap-2">
+                      <span className="text-blue-400 font-bold">
+                        #0{idx + 1}
+                      </span>
+                      <span>{item.caption}</span>
+                    </figcaption>
+                  )}
+                </figure>
+              ))}
+            </div>
+          </section>
+        ) : (
+          project.imageUrl && (
+            <div className="relative w-full h-64 md:h-105 rounded-2xl overflow-hidden border border-zinc-800/80 mb-12 shadow-2xl">
+              <Image
+                src={project.imageUrl}
+                alt={project.title}
+                fill
+                sizes="(max-width: 896px) 100vw, 896px"
+                className="object-cover object-top"
+                priority
+              />
+            </div>
+          )
         )}
 
         <div className="space-y-12">

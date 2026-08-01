@@ -29,11 +29,11 @@ export const profileData = {
   ],
   skills: {
     languages: ["JavaScript", "TypeScript", "PHP", "Java"],
-    frontend: ["HTML5", "CSS3", "Tailwind CSS", "React / Next.js"],
+    frontend: ["HTML5", "CSS3", "Tailwind CSS", "React / Next.js", "React Native"],
     backend: ["Node.js", "Express", "NestJS", "Laravel"],
-    databaseAndORM: ["PostgreSQL", "MySQL", "MongoDB", "Prisma ORM"],
-    queuesAndServices: ["Redis", "BullMQ", "Firebase", "Mailtrap"],
-    devOpsAndTools: ["Docker", "Postman", "Git"],
+    databaseAndORM: ["PostgreSQL", "MySQL", "MongoDB", "Prisma ORM", "Firebase Firestore"],
+    queuesAndServices: ["Redis", "BullMQ", "Firebase", "Firebase Auth", "Mailtrap"],
+    devOpsAndTools: ["Docker", "Postman", "Git", "Figma"],
   },
   links: {
     github: "https://github.com/galesTV",
