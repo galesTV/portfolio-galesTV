@@ -79,11 +79,12 @@ export const DotField = memo(
       gradientTo,
     };
     const rebuildRef = useRef<(() => void) | null>(null);
-    const glowIdRef = useRef(
-      `dot-field-glow-${Math.random().toString(36).slice(2, 9)}`,
-    );
+    const glowIdRef = useRef<string>("");
 
     useEffect(() => {
+      if (!glowIdRef.current) {
+        glowIdRef.current = `dot-field-glow-${Math.random().toString(36).slice(2, 9)}`;
+      }
       const canvas = canvasRef.current;
       const glowEl = glowRef.current;
       if (!canvas) return;
