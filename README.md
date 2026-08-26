@@ -4,7 +4,6 @@
 [![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![License](https://img.shields.io/badge/License-MIT-blue.style=for-the-badge)](./LICENSE)
 
 Aplicação web moderna, interativa e de alta performance desenvolvida para apresentar minha trajetória, projetos de engenharia de software e habilidades técnicas no ecossistema de desenvolvimento de software (Backend, Microsserviços e Web Full-Stack).
 
