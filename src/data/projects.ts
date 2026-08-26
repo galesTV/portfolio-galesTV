@@ -31,7 +31,7 @@ export const projects: Project[] = [
       "Solução distribuída de alta performance para gerenciamento de agendamentos, filas virtuais e concorrência em tempo real.",
     role: "Desenvolvedor Backend / Architect",
     period: "2026",
-    imageUrl: "/orquestra-front.png",
+    imageUrl: "/orquestra.png",
     gallery: [
       {
         url: "/orquestra-front.png",
@@ -81,7 +81,7 @@ export const projects: Project[] = [
       "Sistema desenvolvido para otimizar o tempo de espera em filas de cantina, integrando painel administrativo, rotas de pedidos e banco de dados relacional.",
     role: "Desenvolvedor Full-Stack",
     period: "2026",
-    imageUrl: "/furafila-aluno.png",
+    imageUrl: "/furafila-logo.png",
     gallery: [
       {
         url: "/furafila-aluno.png",
@@ -254,7 +254,7 @@ export const projects: Project[] = [
       "Aplicativo mobile de gestão financeira pessoal desenvolvido como Trabalho de Conclusão de Curso (TCC) na ETEC de Guarulhos, focado em simplicidade, orçamentos e relatórios em tempo real.",
     role: "Líder do Projeto / Desenvolvedor Backend & Banco de Dados",
     period: "2025",
-    imageUrl: "/finwise.png",
+    imageUrl: "/finwise-logo.png",
     gallery: [
       {
         url: "/finwise.png",

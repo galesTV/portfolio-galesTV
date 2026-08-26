@@ -112,8 +112,9 @@ function ProjectCard({ project, dimmed, onHoverStart, onHoverEnd }: CardProps) {
               src={project.imageUrl}
               alt={project.title}
               fill
+              priority
               sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
             />
           </div>
         )}
