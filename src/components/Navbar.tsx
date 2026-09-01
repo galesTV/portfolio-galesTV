@@ -1,17 +1,52 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
 import { FileText, Mail, Menu, X } from "lucide-react";
 import { profileData } from "@/data/profile";
 
+const NAV_ITEMS = [
+  { href: "#about", label: "Sobre", id: "about" },
+  { href: "#experience", label: "Experiência", id: "experience" },
+  { href: "#projects", label: "Projetos", id: "projects" },
+  { href: "#techs", label: "Skills", id: "techs" },
+  { href: "#contact", label: "Contato", id: "contact" },
+];
+
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("");
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
   const closeMenu = () => setIsOpen(false);
+
+  useEffect(() => {
+    const sectionIds = NAV_ITEMS.map((item) => item.id);
+    const observerOptions = {
+      root: null,
+      rootMargin: "-20% 0px -60% 0px",
+      threshold: 0,
+    };
+
+    const handleIntersect: IntersectionObserverCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersect, observerOptions);
+
+    sectionIds.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <motion.header
@@ -29,31 +64,31 @@ export function Navbar() {
           GAEL<span className="text-blue-500">.</span>GUZMAN
         </Link>
 
-        <nav className="hidden md:flex items-center gap-6 text-sm text-zinc-400">
-          <Link href="#about" className="hover:text-zinc-100 transition-colors">
-            Sobre
-          </Link>
-          <Link
-            href="#experience"
-            className="hover:text-zinc-100 transition-colors"
-          >
-            Experiência
-          </Link>
-          <Link
-            href="#projects"
-            className="hover:text-zinc-100 transition-colors"
-          >
-            Projetos
-          </Link>
-          <Link href="#techs" className="hover:text-zinc-100 transition-colors">
-            Skills
-          </Link>
-          <Link
-            href="#contact"
-            className="hover:text-zinc-100 transition-colors"
-          >
-            Contato
-          </Link>
+        <nav className="hidden md:flex items-center gap-6 text-sm">
+          {NAV_ITEMS.map((item) => {
+            const isActive = activeSection === item.id;
+            return (
+              <Link
+                key={item.id}
+                href={item.href}
+                className={`relative py-1 transition-colors ${
+                  isActive
+                    ? "text-zinc-100 font-medium"
+                    : "text-zinc-400 hover:text-zinc-100"
+                }`}
+              >
+                {item.label}
+
+                {isActive && (
+                  <motion.div
+                    layoutId="activeSectionIndicator"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-500 rounded-full"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="flex items-center gap-3 sm:gap-4 text-zinc-400">
@@ -128,34 +163,20 @@ export function Navbar() {
             className="md:hidden border-t border-zinc-800/80 bg-zinc-950 w-full"
           >
             <nav className="flex flex-col px-6 py-4 space-y-4 font-mono text-sm text-zinc-200">
-              <Link
-                href="#about"
-                onClick={closeMenu}
-                className="hover:text-blue-400 py-1 transition-colors block"
-              >
-                // 01. Sobre
-              </Link>
-              <Link
-                href="#experience"
-                onClick={closeMenu}
-                className="hover:text-blue-400 py-1 transition-colors block"
-              >
-                // 02. Experiência
-              </Link>
-              <Link
-                href="#projects"
-                onClick={closeMenu}
-                className="hover:text-blue-400 py-1 transition-colors block"
-              >
-                // 03. Projetos
-              </Link>
-              <Link
-                href="#techs"
-                onClick={closeMenu}
-                className="hover:text-blue-400 py-1 transition-colors block"
-              >
-                // 04. Skills
-              </Link>
+              {NAV_ITEMS.map((item, idx) => (
+                <Link
+                  key={item.id}
+                  href={item.href}
+                  onClick={closeMenu}
+                  className={`py-1 transition-colors block ${
+                    activeSection === item.id
+                      ? "text-blue-400 font-bold"
+                      : "hover:text-blue-400"
+                  }`}
+                >
+                  // 0{idx + 1}. {item.label}
+                </Link>
+              ))}
             </nav>
           </motion.div>
         )}

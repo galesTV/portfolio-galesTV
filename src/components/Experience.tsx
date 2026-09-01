@@ -62,20 +62,23 @@ export function Experience() {
                   key={idx}
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
+                  whileHover={{ y: -4, scale: 1.01 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  className="p-5 rounded-xl border border-zinc-800/80 bg-zinc-900/30"
+                  transition={{ duration: 0.3, delay: idx * 0.1 }}
+                  className="group p-5 rounded-xl border border-zinc-800/80 bg-zinc-900/30 hover:bg-zinc-900/70 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300 cursor-pointer"
                 >
                   <div className="flex items-center justify-between text-xs font-mono text-zinc-500 mb-2">
-                    <span className="text-blue-400 font-semibold">
+                    <span className="text-blue-400 font-semibold group-hover:text-blue-300 transition-colors">
                       {edu.status}
                     </span>
-                    <span>{edu.period}</span>
+                    <span className="group-hover:text-zinc-400 transition-colors">
+                      {edu.period}
+                    </span>
                   </div>
-                  <h4 className="text-lg font-bold text-zinc-200">
+                  <h4 className="text-lg font-bold text-zinc-200 group-hover:text-white transition-colors">
                     {edu.course}
                   </h4>
-                  <p className="text-sm text-zinc-400 mt-1">
+                  <p className="text-sm text-zinc-400 mt-1 group-hover:text-zinc-300 transition-colors">
                     {edu.institution}
                   </p>
                 </motion.div>
