@@ -4,7 +4,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
-import { Mail, Menu, X } from "lucide-react";
+import { FileText, Mail, Menu, X } from "lucide-react";
 import { profileData } from "@/data/profile";
 
 export function Navbar() {
@@ -47,6 +47,12 @@ export function Navbar() {
           </Link>
           <Link href="#techs" className="hover:text-zinc-100 transition-colors">
             Skills
+          </Link>
+          <Link
+            href="#contact"
+            className="hover:text-zinc-100 transition-colors"
+          >
+            Contato
           </Link>
         </nav>
 
@@ -91,6 +97,15 @@ export function Navbar() {
             aria-label="E-mail"
           >
             <Mail size={18} />
+          </a>
+
+          <a
+            href="/curriculo.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-zinc-100 transition-colors p-1"
+          >
+            <FileText size={18} />
           </a>
 
           <button
