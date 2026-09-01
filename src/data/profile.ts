@@ -3,7 +3,7 @@ export const profileData = {
   role: "Desenvolvedor Backend & Software Engineering Student",
   location: "São Paulo, SP - Brasil",
   about:
-    "Estudante do 2º semestre de Desenvolvimento de Software Multiplataforma na Fatec Itaquera e técnico em Desenvolvimento de Sistemas pela Etec de Guarulhos (2023-2025). Tenho foco em construção de APIs RESTful, sistemas distribuídos, arquitetura de software e otimização de banco de dados. Tenho experiência com Node.js, PHP/Laravel, MySQL e práticas modernas de versionamento e CI/CD.",
+    "Estudante do 2º semestre de Desenvolvimento de Software Multiplataforma na Fatec Itaquera e técnico em Desenvolvimento de Sistemas pela Etec de Guarulhos (2023-2025). Tenho foco em construção de APIs RESTful, sistemas distribuídos, arquitetura de software e otimização de banco de dados. Tenho experiência com Node.js, NestJS, Next.js, PHP/Laravel, MySQL e práticas modernas de versionamento e CI/CD.",
   education: [
     {
       institution: "Fatec Itaquera",

@@ -60,7 +60,7 @@ export function About() {
                   <span className="text-sm">Foco Atual</span>
                 </div>
                 <p className="text-xs text-zinc-400">
-                  Arquitetura de microsserviços, Node.js, TypeScript e
+                  Arquitetura de microsserviços, NestJS, TypeScript e
                   otimização de queries SQL.
                 </p>
               </div>

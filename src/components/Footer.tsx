@@ -28,15 +28,7 @@ export function Footer() {
             rel="noopener noreferrer"
             className="text-xs hover:text-zinc-200 transition-colors"
           >
-            GitHub
-          </a>
-          <a
-            href={profileData.links.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs hover:text-zinc-200 transition-colors"
-          >
-            LinkedIn
+            Portfólio v1.1.2
           </a>
           <button
             onClick={scrollToTop}
