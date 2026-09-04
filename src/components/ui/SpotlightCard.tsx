@@ -19,7 +19,12 @@ interface CardProps {
   onHoverEnd: () => void;
 }
 
-function ProjectCard({ project, dimmed, onHoverStart, onHoverEnd }: CardProps) {
+export function ProjectCard({
+  project,
+  dimmed,
+  onHoverStart,
+  onHoverEnd,
+}: CardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const accentColor = project.color || "#3b82f6";
 
@@ -73,7 +78,7 @@ function ProjectCard({ project, dimmed, onHoverStart, onHoverEnd }: CardProps) {
         transformPerspective: 900,
       }}
       className={cn(
-        "group relative flex flex-col justify-between overflow-hidden rounded-2xl border p-6 transition-all duration-300",
+        "group relative flex h-full w-full flex-col justify-between overflow-hidden rounded-2xl border p-6 transition-all duration-300",
         "border-zinc-800/80 bg-zinc-900/40 backdrop-blur-sm hover:border-zinc-700/80",
       )}
     >

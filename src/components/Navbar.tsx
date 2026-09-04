@@ -135,7 +135,7 @@ export function Navbar() {
           </a>
 
           <a
-            href="/curriculo.pdf"
+            href="/Curriculo.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-zinc-100 transition-colors p-1"
