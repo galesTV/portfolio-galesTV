@@ -5,6 +5,7 @@ import { Experience } from "@/components/Experience";
 import { ProjectsGrid } from "@/components/ProjectsGrid";
 import { TechStack } from "@/components/TechStack";
 import { Footer } from "@/components/Footer";
+import { Contact } from "@/components/Contact";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Experience />
       <ProjectsGrid />
       <TechStack />
+      <Contact />
       <Footer />
     </main>
   );
