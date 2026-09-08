@@ -18,6 +18,44 @@ export const profileData = {
       status: "Concluído",
     },
   ],
+  courses: [
+    {
+      title: "C Essentials 1",
+      institution: "Cisco Networking Academy",
+      hours: "40h",
+      date: "06/2026",
+      credentialFile: "/certificados/c-essentials-1.pdf",
+      credentialUrl: "https://www.credly.com/badges/98a8855e-f516-45bc-91df-83dcbf92ecfa",
+      tags: ["C", "Programação"]
+    },
+    {
+      title: "Análise de Desempenho e Mercado",
+      institution: "Futebol Interativo",
+      hours: "120h",
+      date: "06/2025",
+      credentialFile: "/certificados/certificado-especializacao-analise-de-desempenho-e-mercado.pdf",
+      credentialUrl: "https://ead.disce.com.br/certificado",
+      tags: ["Análise de Dados", "Tática"],
+    },
+    {
+      title: "Trilha do Técnico em Redes",
+      institution: "Cisco Networking Academy",
+      hours: "70h",
+      date: "06/2025",
+      credentialFile: "/certificados/fundamentos-da-rede.pdf",
+      credentialUrl: "https://www.credly.com/badges/75e032a4-db85-47d0-ac57-e81a79522f45",
+      tags: ["Redes", "Segurança"],
+    },
+    {
+      title: "Defesa de Rede",
+      institution: "Cisco Networking Academy",
+      hours: "27h",
+      date: "04/2025",
+      credentialFile: "/certificados/defesa-de-rede.pdf",
+      credentialUrl: "https://www.credly.com/badges/ca2b9bfa-717d-42c9-9048-3df27292e352",
+      tags: ["Redes", "Segurança"],
+    },
+  ],
   experience: [
     {
       role: "Programador PHP (Freelance)",
@@ -29,10 +67,28 @@ export const profileData = {
   ],
   skills: {
     languages: ["JavaScript", "TypeScript", "PHP", "Java"],
-    frontend: ["HTML5", "CSS3", "Tailwind CSS", "React / Next.js", "React Native"],
+    frontend: [
+      "HTML5",
+      "CSS3",
+      "Tailwind CSS",
+      "React / Next.js",
+      "React Native",
+    ],
     backend: ["Node.js", "Express", "NestJS", "Laravel"],
-    databaseAndORM: ["PostgreSQL", "MySQL", "MongoDB", "Prisma ORM", "Firebase Firestore"],
-    queuesAndServices: ["Redis", "BullMQ", "Firebase", "Firebase Auth", "Mailtrap"],
+    databaseAndORM: [
+      "PostgreSQL",
+      "MySQL",
+      "MongoDB",
+      "Prisma ORM",
+      "Firebase Firestore",
+    ],
+    queuesAndServices: [
+      "Redis",
+      "BullMQ",
+      "Firebase",
+      "Firebase Auth",
+      "Mailtrap",
+    ],
     devOpsAndTools: ["Docker", "Postman", "Git", "Figma"],
   },
   links: {
