@@ -2,6 +2,7 @@ import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
 import { Experience } from "@/components/Experience";
+import { Certifications } from "@/components/Certifications";
 import { ProjectsGrid } from "@/components/ProjectsGrid";
 import { TechStack } from "@/components/TechStack";
 import { Footer } from "@/components/Footer";
@@ -14,6 +15,7 @@ export default function Home() {
       <Hero />
       <About />
       <Experience />
+      <Certifications />
       <ProjectsGrid />
       <TechStack />
       <Contact />
