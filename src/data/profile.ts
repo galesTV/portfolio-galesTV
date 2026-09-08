@@ -33,7 +33,7 @@ export const profileData = {
       institution: "Futebol Interativo",
       hours: "120h",
       date: "06/2025",
-      credentialFile: "/certificados/certificado-especializacao-analise-de-desempenho-e-mercado.jpg",
+      credentialFile: "/certificados/certificado-especializacao-analise-de-desempenho-e-mercado.pdf",
       credentialUrl: "https://ead.disce.com.br/certificado",
       tags: ["Análise de Dados", "Tática"],
     },
