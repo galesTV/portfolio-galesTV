@@ -57,8 +57,8 @@ export const projects: Project[] = [
       "BullMQ",
       "REST API",
     ],
-    backendRepo: "https://github.com/gael-guzman/orquestra-queue-system",
-    frontendRepo: "https://github.com/gael-guzman/orquestra-queue-system-frontend",
+    backendRepo: "https://github.com/galesTV/orquestra-queue-system",
+    frontendRepo: "https://github.com/galesTV/orquestra-queue-system-frontend",
     features: [
       "Agendamento Inteligente com alocação direta ou inserção dinâmica na fila de espera",
       "Garantia de Fila de Espera Ordenada sem sobreposição de posições (position)",
@@ -114,7 +114,7 @@ export const projects: Project[] = [
     fullDescription:
       "Desenvolvido em grupo para atender a demanda de agilidade no ambiente escolar. O projeto abrange desde o fluxo de autenticação até o acompanhamento do status do pedido no painel do administrador.",
     tags: ["Node.js", "JavaScript", "MySQL", "HTML5/CSS3", "Express"],
-    frontendRepo: "https://github.com/gael-guzman/furafila-digital",
+    frontendRepo: "https://github.com/galesTV/furafila-digital",
     features: [
       "Painel administrativo para gestão do cardápio e estoque",
       "Interface responsiva para pedidos rápidos de alunos",
@@ -183,7 +183,7 @@ export const projects: Project[] = [
     fullDescription:
       "O projeto foi desenvolvido com foco em design responsivo e interatividade, utilizando tecnologias modernas para criar uma experiência envolvente para os usuários, permitindo explorar informações sobre a Copa do Mundo de 2026 de forma divertida e educativa. Para o álbum de figurinhas, foi utilizado o conceito de localStorage para armazenar as figurinhas coletadas pelos usuários, proporcionando uma experiência personalizada e interativa. Na escalação, foi usado a API thesportsdb para obter informações sobre os jogadores e suas estatísticas, garantindo dados atualizados e precisos. No simulador da copa do mundo, foi implementado um sistema de simulação dos resultados, permitindo que os usuários possam prever os resultados dos jogos e acompanhar o desempenho das equipes ao longo do torneio e prevendo o campeão da copa.",
     tags: ["HTML5", "CSS3", "JavaScript"],
-    frontendRepo: "https://github.com/gael-guzman/copa-do-mundo",
+    frontendRepo: "https://github.com/galesTV/copa-do-mundo",
     features: [
       "Design responsivo e interativo",
       "Álbum de figurinhas com localStorage",
@@ -238,7 +238,7 @@ export const projects: Project[] = [
     fullDescription:
       "O projeto foi desenvolvido para a matéria de Desenvolvimento Web na Fatec Itaquera, com foco em design responsivo e interatividade, utilizando tecnologias modernas para criar uma experiência envolvente para os usuários.",
     tags: ["HTML5", "CSS3", "JavaScript"],
-    frontendRepo: "https://github.com/gael-guzman/lendas-nacionais",
+    frontendRepo: "https://github.com/galesTV/lendas-nacionais",
     features: [
       "Design responsivo e interativo",
       "Quiz interativo sobre os artistas",

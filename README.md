@@ -79,8 +79,8 @@ portfolio/
 ### Passo a Passo
 1. Clone o repositório:
 ```bash
-git clone https://github.com/gael-guzman/portfolio-gael-guzman.git
-cd portfolio-gael-guzman
+git clone https://github.com/galesTV/portfolio-galesTV.git
+cd portfolio-galesTV
 ```
 
 2. Instale as dependências:

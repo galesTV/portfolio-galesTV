@@ -82,7 +82,7 @@ export function Contact() {
                 </span>
               </div>
               <span className="font-mono text-xs text-zinc-500 group-hover:text-blue-400 transition-colors flex items-center gap-1">
-                /gael-guzman{" "}
+                /galesTV{" "}
                 <span className="group-hover:translate-x-1 transition-transform inline-block">
                   →
                 </span>
