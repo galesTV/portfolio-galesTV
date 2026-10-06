@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Gael Leite Guzman | Backend Developer",
-  description: "I'm a backend developer with experience in building scalable and maintainable applications.",
+  title: "Gael Leite Guzman | Desenvolvedor de Software",
+  description:
+    "Portfólio de Gael Leite Guzman, desenvolvedor de software com foco em backend, sistemas e engenharia de software.",
 };
 
 export default function RootLayout({
@@ -24,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="pt-BR"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
