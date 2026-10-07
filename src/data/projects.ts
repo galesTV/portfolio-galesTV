@@ -20,12 +20,18 @@ export interface Project {
   liveUrl?: string;
   features: string[];
   architecture?: string[];
+  featured?: boolean;
+  contextLabel?: string;
+  contribution?: string;
 }
 
 export const projects: Project[] = [
   {
     slug: "orquestra-queue-system",
     title: "Orquestra Queue System",
+    featured: true,
+    contextLabel: "Solo project · Backend / Systems",
+    contribution: "Arquitetura e desenvolvimento integral do sistema.",
     color: "#0a3884",
     tagline:
       "Solução distribuída de alta performance para gerenciamento de agendamentos, filas virtuais e concorrência em tempo real.",
@@ -249,6 +255,9 @@ export const projects: Project[] = [
   {
     slug: "finwise",
     title: "FinWise",
+    featured: true,
+    contextLabel: "TCC · Mobile / Backend",
+    contribution: "Responsável por todo o backend e apoio no frontend na reta final.",
     color: "#eab308",
     tagline:
       "Aplicativo mobile de gestão financeira pessoal desenvolvido como Trabalho de Conclusão de Curso (TCC) na ETEC de Guarulhos, focado em simplicidade, orçamentos e relatórios em tempo real.",
@@ -291,6 +300,32 @@ export const projects: Project[] = [
       "Banco de Dados NoSQL com Firebase Firestore para dados em tempo real",
       "Estratégia de caching e persistência offline com AsyncStorage / localStorage",
       "App Cross-Platform com React Native, Expo, Context API e Styled Components",
+    ],
+  },
+  {
+    slug: "fala-fatec",
+    title: "Fala Fatec",
+    featured: true,
+    contextLabel: "Hackathon · Team project",
+    contribution: "Back-end Web e API Core com FastAPI.",
+    tagline: "Assistente de comunicação acadêmica que reúne avisos, aulas, provas, eventos e orientação por IA em um único canal.",
+    role: "Back-end Web / API Core",
+    period: "2026",
+    description: "MVP criado no Hackathon FATEC Itaquera para reduzir a dispersão de informações acadêmicas e facilitar o acesso dos alunos pelo WhatsApp.",
+    fullDescription: "O Fala Fatec centraliza informações acadêmicas em uma API FastAPI integrada a um bot de WhatsApp e ao Google Gemini. Minha responsabilidade ficou no backend web e na API Core, trabalhando em conjunto com o restante da equipe para conectar os fluxos de comunicação e consulta de informações.",
+    tags: ["Python", "FastAPI", "Google Gemini", "WhatsApp", "Node.js"],
+    backendRepo: "https://github.com/imlucsz/hackathon-fatec-2026",
+    liveUrl: "https://github.com/imlucsz/hackathon-fatec-2026",
+    features: [
+      "API para comunicados, aulas, provas, eventos e sugestões",
+      "Integração com Google Gemini para dúvidas em linguagem natural",
+      "Fluxo de atendimento pelo WhatsApp",
+      "Distribuição de comunicados por curso e semestre",
+    ],
+    architecture: [
+      "API Core desenvolvida com Python e FastAPI",
+      "Contrato HTTP documentado via OpenAPI / Swagger",
+      "Integração entre API, bridge WhatsApp e serviço de IA",
     ],
   },
 ];
