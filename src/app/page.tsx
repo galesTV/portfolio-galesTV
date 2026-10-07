@@ -1,22 +1,22 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
-import { Experience } from "@/components/Experience";
-import { Certifications } from "@/components/Certifications";
 import { ProjectsGrid } from "@/components/ProjectsGrid";
+import { Trajectory } from "@/components/Trajectory";
+import { Certifications } from "@/components/Certifications";
 import { TechStack } from "@/components/TechStack";
 import { Footer } from "@/components/Footer";
 import { Contact } from "@/components/Contact";
 
 export default function Home() {
   return (
-    <main className="bg-zinc-950 text-zinc-100 min-h-screen overflow-x-hidden">
+    <main className="min-h-screen overflow-x-hidden bg-background text-text-primary">
       <Navbar />
       <Hero />
       <About />
-      <Experience />
-      <Certifications />
       <ProjectsGrid />
+      <Trajectory />
+      <Certifications />
       <TechStack />
       <Contact />
       <Footer />

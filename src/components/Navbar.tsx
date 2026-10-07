@@ -9,7 +9,7 @@ import { profileData } from "@/data/profile";
 const NAV_ITEMS = [
   { href: "#projects", label: "Trabalho", id: "projects" },
   { href: "#about", label: "Sobre", id: "about" },
-  { href: "#experience", label: "Trajetória", id: "experience" },
+  { href: "#trajectory", label: "Trajetória", id: "trajectory" },
   { href: "#contact", label: "Contato", id: "contact" },
 ];
 
