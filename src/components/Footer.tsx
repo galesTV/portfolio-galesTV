@@ -28,15 +28,7 @@ export function Footer() {
             rel="noopener noreferrer"
             className="text-xs hover:text-zinc-200 transition-colors"
           >
-            Portfólio v1.3.3
-          </a>
-          <a
-            href="https://github.com/galesTV/portfolio-galesTV"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs hover:text-zinc-200 transition-colors"
-          >
-            Última alteração: 29/09/2025
+            GitHub
           </a>
           <button
             onClick={scrollToTop}

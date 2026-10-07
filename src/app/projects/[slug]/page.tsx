@@ -1,20 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import {
-  ArrowLeft,
-  ExternalLink,
-  CheckCircle2,
-  Layers,
-  Cpu,
-  ImageIcon,
-} from "lucide-react";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { projects } from "@/data/projects";
 
 export async function generateStaticParams() {
-  return projects.map((project) => ({
-    slug: project.slug,
-  }));
+  return projects.map((project) => ({ slug: project.slug }));
 }
 
 export default async function ProjectDetails(props: {
@@ -22,198 +13,114 @@ export default async function ProjectDetails(props: {
 }) {
   const params = await props.params;
   const project = projects.find((p) => p.slug === params.slug);
+  if (!project) notFound();
 
-  if (!project) {
-    notFound();
-  }
+  const study = project.caseStudy;
 
   return (
-    <main className="min-h-screen bg-zinc-950 text-zinc-100 py-16 px-6">
-      <div className="max-w-4xl mx-auto">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-blue-400 transition-colors mb-12 group"
-        >
-          <ArrowLeft
-            size={16}
-            className="group-hover:-translate-x-1 transition-transform"
-          />
-          Voltar para o início
+    <main className="min-h-screen bg-background text-text-primary">
+      <div className="mx-auto max-w-6xl px-6 py-8 md:px-10 md:py-12">
+        <Link href="/#projects" className="inline-flex items-center gap-2 text-sm text-text-secondary transition-colors hover:text-accent">
+          <ArrowLeft size={15} /> Voltar para projetos
         </Link>
 
-        <div className="border-b border-zinc-800/80 pb-8 mb-10">
-          <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-blue-400 mb-3">
-            <span>{project.role}</span>
-            <span>•</span>
-            <span>{project.period}</span>
+        <header className="border-b border-border pb-14 pt-16 md:pb-20 md:pt-24">
+          <div className="grid gap-10 lg:grid-cols-[1fr_280px] lg:items-end">
+            <div>
+              <div className="mb-5 flex flex-wrap gap-x-4 gap-y-2 font-mono text-xs uppercase tracking-[0.18em] text-text-muted">
+                <span>{project.contextLabel ?? "Projeto"}</span>
+                <span>{project.period}</span>
+              </div>
+              <h1 className="max-w-4xl text-5xl font-semibold tracking-[-0.04em] md:text-7xl">{project.title}</h1>
+              <p className="mt-7 max-w-3xl text-lg leading-8 text-text-secondary md:text-xl">{project.tagline}</p>
+            </div>
+            <div className="border-l border-border pl-6">
+              <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-text-muted">Meu papel</p>
+              <p className="mt-3 text-sm leading-6 text-text-primary">{project.role}</p>
+            </div>
           </div>
 
-          <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-4 text-zinc-100">
-            {project.title}
-          </h1>
-
-          <p className="text-lg text-zinc-400 leading-relaxed max-w-3xl">
-            {project.tagline}
-          </p>
-
-          <div className="flex flex-wrap gap-4 mt-8">
-            {project.backendRepo && (
-              <a
-                href={project.backendRepo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-5 py-2.5 rounded-lg bg-blue-600/90 hover:bg-blue-600 text-white text-sm font-medium transition-colors flex items-center gap-2 shadow-lg shadow-blue-600/10"
-              >
-                <span>Repositório Backend</span>
-                <ExternalLink size={16} />
-              </a>
-            )}
-
-            {project.frontendRepo && (
-              <a
-                href={project.frontendRepo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-5 py-2.5 rounded-lg border border-zinc-700 bg-zinc-900/60 hover:bg-zinc-800 text-zinc-200 text-sm font-medium transition-colors flex items-center gap-2"
-              >
-                <span>Repositório Frontend</span>
-                <ExternalLink size={16} />
-              </a>
-            )}
-
-            {project.liveUrl && (
-              <a
-                href={project.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-5 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-medium transition-colors flex items-center gap-2"
-              >
-                <span>Acessar Aplicação</span>
-                <ExternalLink size={16} />
-              </a>
-            )}
+          <div className="mt-10 flex flex-wrap gap-5 text-sm">
+            {project.backendRepo && <a href={project.backendRepo} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 border-b border-text-primary pb-1 transition-colors hover:border-accent hover:text-accent">Backend <ArrowUpRight size={14} /></a>}
+            {project.frontendRepo && <a href={project.frontendRepo} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 border-b border-text-primary pb-1 transition-colors hover:border-accent hover:text-accent">Frontend <ArrowUpRight size={14} /></a>}
+            {project.liveUrl && <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 border-b border-text-primary pb-1 transition-colors hover:border-accent hover:text-accent">Ver projeto <ArrowUpRight size={14} /></a>}
           </div>
-        </div>
+        </header>
 
-        {project.gallery && project.gallery.length > 0 ? (
-          <section className="mb-12 space-y-8">
-            <h2 className="text-lg font-semibold text-zinc-200 flex items-center gap-2">
-              <ImageIcon size={18} className="text-blue-400" />
-              Demonstração Visual
-            </h2>
-
-            <div className="grid grid-cols-1 gap-8">
+        {project.gallery?.length ? (
+          <section className="border-b border-border py-12 md:py-16">
+            <div className="grid gap-6">
               {project.gallery.map((item, idx) => (
-                <figure
-                  key={idx}
-                  className="group rounded-2xl bg-zinc-900/40 border border-zinc-800/80 overflow-hidden shadow-xl"
-                >
-                  <div className="relative w-full bg-zinc-950">
-                    <Image
-                      src={item.url}
-                      alt={
-                        item.caption || `${project.title} - Imagem ${idx + 1}`
-                      }
-                      width={1200}
-                      height={675}
-                      className="w-full h-auto object-cover rounded-t-2xl transition-transform duration-300 group-hover:scale-[1.005]"
-                      priority={idx === 0}
-                    />
+                <figure key={idx}>
+                  <div className="relative overflow-hidden border border-border bg-surface">
+                    <Image src={item.url} alt={item.caption || `${project.title} — imagem ${idx + 1}`} width={1200} height={675} className="h-auto w-full object-cover" priority={idx === 0} />
                   </div>
-                  {item.caption && (
-                    <figcaption className="p-4 border-t border-zinc-800/60 bg-zinc-900/60 text-xs md:text-sm text-zinc-400 font-mono flex items-center gap-2">
-                      <span className="text-blue-400 font-bold">
-                        #0{idx + 1}
-                      </span>
-                      <span>{item.caption}</span>
-                    </figcaption>
-                  )}
+                  {item.caption && <figcaption className="mt-3 flex gap-3 font-mono text-[11px] leading-5 text-text-muted"><span className="text-accent">0{idx + 1}</span><span>{item.caption}</span></figcaption>}
                 </figure>
               ))}
             </div>
           </section>
-        ) : (
-          project.imageUrl && (
-            <div className="relative w-full h-64 md:h-105 rounded-2xl overflow-hidden border border-zinc-800/80 mb-12 shadow-2xl">
-              <Image
-                src={project.imageUrl}
-                alt={project.title}
-                fill
-                sizes="(max-width: 896px) 100vw, 896px"
-                className="object-cover object-top"
-                priority
-              />
+        ) : project.imageUrl ? (
+          <section className="border-b border-border py-12 md:py-16">
+            <div className="relative aspect-video overflow-hidden border border-border bg-surface">
+              <Image src={project.imageUrl} alt={project.title} fill sizes="(max-width: 896px) 100vw, 896px" className="object-cover object-top" priority />
             </div>
-          )
-        )}
-
-        <div className="space-y-12">
-          <section className="bg-zinc-900/30 border border-zinc-800/60 rounded-xl p-6 md:p-8">
-            <h2 className="text-lg font-semibold text-zinc-200 mb-4 flex items-center gap-2">
-              <Layers size={18} className="text-blue-400" />
-              Visão Geral do Sistema
-            </h2>
-            <p className="text-zinc-400 leading-relaxed">
-              {project.fullDescription}
-            </p>
           </section>
+        ) : null}
 
-          {project.features && project.features.length > 0 && (
+        <div className="grid gap-14 py-16 md:py-20 lg:grid-cols-[180px_1fr]">
+          <aside className="font-mono text-xs uppercase tracking-[0.18em] text-text-muted">Case study</aside>
+          <div className="max-w-3xl space-y-16">
+            {study ? (
+              <>
+                <CaseSection label="Contexto" text={study.context} />
+                <CaseSection label="Problema" text={study.problem} />
+                <CaseSection label="Meu papel" text={study.role} />
+                <CaseList label="Decisões" items={study.decisions} />
+                <CaseList label="Desafios" items={study.challenges} />
+                <CaseSection label="Solução" text={study.solution} />
+                <CaseSection label="Resultado" text={study.result} />
+                <CaseList label="Aprendizados" items={study.learnings} />
+              </>
+            ) : (
+              <CaseSection label="Visão geral" text={project.fullDescription} />
+            )}
+
+            {project.features.length > 0 && (
+              <CaseList label="O que foi construído" items={project.features} />
+            )}
+
             <section>
-              <h2 className="text-lg font-semibold text-zinc-200 mb-4 flex items-center gap-2">
-                <CheckCircle2 size={18} className="text-blue-400" />
-                Principais Funcionalidades
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {project.features.map((feature, idx) => (
-                  <div
-                    key={idx}
-                    className="p-4 rounded-lg bg-zinc-900/40 border border-zinc-800/50 text-sm text-zinc-300 flex items-start gap-3"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0" />
-                    <span>{feature}</span>
-                  </div>
-                ))}
+              <p className="mb-5 font-mono text-xs uppercase tracking-[0.18em] text-text-muted">Stack</p>
+              <div className="flex flex-wrap gap-x-5 gap-y-3 text-sm text-text-secondary">
+                {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
               </div>
             </section>
-          )}
-
-          {project.architecture && project.architecture.length > 0 && (
-            <section>
-              <h2 className="text-lg font-semibold text-zinc-200 mb-4 flex items-center gap-2">
-                <Cpu size={18} className="text-blue-400" />
-                Arquitetura e Destaques Técnicos
-              </h2>
-              <ul className="space-y-3">
-                {project.architecture.map((item, idx) => (
-                  <li
-                    key={idx}
-                    className="text-sm text-zinc-400 bg-zinc-900/20 border border-zinc-800/40 rounded-lg p-4 font-mono"
-                  >
-                    ⚡ {item}
-                  </li>
-                ))}
-              </ul>
-            </section>
-          )}
-
-          <section>
-            <h3 className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-3">
-              Tecnologias Utilizadas
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {project.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="px-3 py-1 text-xs font-mono rounded-md bg-blue-500/10 text-blue-300 border border-blue-500/20"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </section>
+          </div>
         </div>
       </div>
     </main>
+  );
+}
+
+function CaseSection({ label, text }: { label: string; text?: string }) {
+  if (!text) return null;
+  return (
+    <section>
+      <p className="mb-4 font-mono text-xs uppercase tracking-[0.18em] text-text-muted">{label}</p>
+      <p className="text-base leading-8 text-text-secondary md:text-lg">{text}</p>
+    </section>
+  );
+}
+
+function CaseList({ label, items }: { label: string; items?: string[] }) {
+  if (!items?.length) return null;
+  return (
+    <section>
+      <p className="mb-4 font-mono text-xs uppercase tracking-[0.18em] text-text-muted">{label}</p>
+      <ul className="space-y-4">
+        {items.map((item) => <li key={item} className="border-l border-border pl-5 text-sm leading-7 text-text-secondary md:text-base">{item}</li>)}
+      </ul>
+    </section>
   );
 }

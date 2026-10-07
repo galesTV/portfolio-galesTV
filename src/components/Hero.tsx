@@ -1,90 +1,94 @@
 "use client";
 
 import { motion } from "motion/react";
-import { ArrowDown, Code2, Terminal } from "lucide-react";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { profileData } from "@/data/profile";
-import { DotField } from "./ui/DotField";
 
 export function Hero() {
   return (
-    <section className="min-h-screen pt-32 pb-20 flex flex-col justify-center relative overflow-hidden bg-zinc-950">
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-80">
-        <DotField
-          dotRadius={2.5}
-          dotSpacing={16}
-          bulgeStrength={100}
-          glowRadius={0}
-          sparkle={true}
-          waveAmplitude={0.5}
-          gradientFrom="rgba(59, 130, 246, 0.4)"
-          gradientTo="rgba(37, 99, 235, 0.1)"
-          glowColor="#1e3a8a"
-        />
-      </div>
+    <section className="relative min-h-screen overflow-hidden border-b border-border bg-background">
+      <div className="pointer-events-none absolute inset-0 opacity-[0.035] [background-image:linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)] [background-size:64px_64px]" />
 
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-blue-600/10 rounded-full blur-[140px] pointer-events-none z-0" />
+      <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 pb-24 pt-32 lg:px-10">
+        <div className="grid gap-12 lg:grid-cols-[1fr_280px] lg:items-end">
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="mb-8 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.18em] text-text-secondary"
+            >
+              <span className="text-accent">01</span>
+              <span>Desenvolvedor de Software</span>
+              <span className="h-px w-10 bg-border" />
+              <span>São Paulo, BR</span>
+            </motion.div>
 
-      <div className="max-w-4xl mx-auto px-6 relative z-10 pointer-events-none">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-blue-500/20 bg-blue-500/10 text-blue-400 text-xs font-mono mb-6 backdrop-blur-xs"
-        >
-          <Terminal size={14} />
-          <span>Desenvolvedor Backend & Engenharia de Software</span>
-        </motion.div>
+            <motion.h1
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.65, delay: 0.08 }}
+              className="max-w-5xl text-[clamp(3.25rem,9vw,8.5rem)] font-semibold leading-[0.88] tracking-[-0.055em] text-text-primary"
+            >
+              Construir
+              <br />
+              <span className="text-text-secondary">é resolver.</span>
+            </motion.h1>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl md:text-6xl font-bold tracking-tight text-zinc-100 mb-6"
-        >
-          {profileData.name}
-        </motion.h1>
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.18 }}
+              className="mt-10 grid max-w-4xl gap-8 md:grid-cols-[minmax(0,520px)_1fr]"
+            >
+              <p className="text-base leading-7 text-text-secondary md:text-lg">
+                Sou {profileData.name}, desenvolvedor de software com foco em
+                backend. Gosto de transformar problemas em sistemas claros,
+                confiáveis e que façam sentido por trás da interface.
+              </p>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg md:text-xl text-zinc-400 leading-relaxed max-w-2xl mb-10"
-        >
-          Construindo microsserviços, APIs RESTful robustas e sistemas
-          distribuídos escaláveis com foco em alta disponibilidade e Clean Code.
-        </motion.p>
+              <div className="flex items-start md:justify-end">
+                <a
+                  href="#projects"
+                  className="group inline-flex items-center gap-3 border-b border-border pb-2 font-mono text-xs uppercase tracking-[0.16em] text-text-primary transition-colors hover:border-accent hover:text-accent"
+                >
+                  Ver trabalho
+                  <ArrowUpRight
+                    size={15}
+                    className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  />
+                </a>
+              </div>
+            </motion.div>
+          </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-wrap items-center gap-4 pointer-events-auto"
-        >
-          <a
-            href="#projects"
-            className="px-6 py-3 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-500 transition-colors flex items-center gap-2 shadow-lg shadow-blue-600/20"
+          <motion.aside
+            initial={{ opacity: 0, x: 16 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.25 }}
+            className="border-l border-border pl-5 font-mono text-xs text-text-muted"
           >
-            Ver Projetos
-            <Code2 size={16} />
-          </a>
-          <a
-            href="#experience"
-            className="px-6 py-3 rounded-lg border border-zinc-800 bg-zinc-900/60 text-zinc-300 text-sm font-medium hover:bg-zinc-800 transition-colors"
-          >
-            Trajetória
-          </a>
+            <p className="mb-5 uppercase tracking-[0.16em] text-text-secondary">
+              O que me interessa
+            </p>
+            <ul className="space-y-3">
+              <li>APIs & integrações</li>
+              <li>Filas & concorrência</li>
+              <li>Arquitetura & clareza</li>
+            </ul>
+          </motion.aside>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.65 }}
+          className="absolute bottom-8 left-6 flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.18em] text-text-muted lg:left-10"
+        >
+          <ArrowDown size={13} />
+          <span>Continue</span>
         </motion.div>
       </div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.8, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-zinc-500 flex flex-col items-center gap-2 pointer-events-none z-10"
-      >
-        <span className="text-xs font-mono">Scroll</span>
-        <ArrowDown size={14} className="animate-bounce" />
-      </motion.div>
     </section>
   );
 }
