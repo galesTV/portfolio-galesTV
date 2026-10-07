@@ -41,7 +41,7 @@ export default async function ProjectDetails(props: {
           </div>
 
           <div className="mt-10 flex flex-wrap gap-5 text-sm">
-            {project.backendRepo && <a href={project.backendRepo} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 border-b border-text-primary pb-1 transition-colors hover:border-accent hover:text-accent">Repositório <ArrowUpRight size={14} /></a>}
+            {project.backendRepo && <a href={project.backendRepo} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 border-b border-text-primary pb-1 transition-colors hover:border-accent hover:text-accent">Backend <ArrowUpRight size={14} /></a>}
             {project.frontendRepo && <a href={project.frontendRepo} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 border-b border-text-primary pb-1 transition-colors hover:border-accent hover:text-accent">Frontend <ArrowUpRight size={14} /></a>}
             {project.liveUrl && <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 border-b border-text-primary pb-1 transition-colors hover:border-accent hover:text-accent">Ver projeto <ArrowUpRight size={14} /></a>}
           </div>
