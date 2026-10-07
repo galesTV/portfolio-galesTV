@@ -1,126 +1,151 @@
 "use client";
 
 import { motion } from "motion/react";
-import {
-  Boxes,
-  Code2,
-  Layout,
-  Server,
-  Database,
-  Layers,
-  Wrench,
-} from "lucide-react";
 import { profileData } from "@/data/profile";
 
+const groups = [
+  {
+    label: "Core",
+    description: "Tecnologias que mais fazem parte da forma como construo software.",
+    items: [
+      ...profileData.skills.programmingLanguages.slice(0, 2),
+      "Node.js",
+      "NestJS",
+      "PostgreSQL",
+      "Redis",
+      "Docker",
+    ],
+  },
+  {
+    label: "Backend & APIs",
+    description: "Ferramentas para APIs, serviços, integrações e processamento.",
+    items: [
+      ...profileData.skills.backend,
+      "Prisma ORM",
+      "BullMQ",
+      "Firebase / Firestore",
+    ],
+  },
+  {
+    label: "Frontend",
+    description: "Interfaces e aplicações que complementam os sistemas que construo.",
+    items: profileData.skills.frontend,
+  },
+  {
+    label: "Dados & Infraestrutura",
+    description: "Tecnologias que uso para persistência, comunicação e execução.",
+    items: profileData.skills.dataAndInfrastructure,
+  },
+  {
+    label: "Outras tecnologias",
+    description: "Tecnologias com as quais também tenho experiência.",
+    items: profileData.skills.otherTechnologies,
+  },
+  {
+    label: "Ferramentas",
+    description: "Ferramentas que fazem parte do meu fluxo de desenvolvimento.",
+    items: profileData.skills.tools,
+  },
+];
+
 export function TechStack() {
-  const categories = [
-    {
-      title: "Linguagens",
-      icon: Code2,
-      items: profileData.skills.languages,
-    },
-    {
-      title: "Frontend",
-      icon: Layout,
-      items: profileData.skills.frontend,
-    },
-    {
-      title: "Backend",
-      icon: Server,
-      items: profileData.skills.backend,
-    },
-    {
-      title: "Banco de Dados & ORM",
-      icon: Database,
-      items: profileData.skills.databaseAndORM,
-    },
-    {
-      title: "Filas & Serviços",
-      icon: Layers,
-      items: profileData.skills.queuesAndServices,
-    },
-    {
-      title: "DevOps & Ferramentas",
-      icon: Wrench,
-      items: profileData.skills.devOpsAndTools,
-    },
-  ];
-
   return (
-    <section id="techs" className="py-24 border-t border-zinc-800/40">
-      <div className="max-w-6xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-12"
-        >
-          <h2 className="text-xs font-mono text-blue-400 uppercase tracking-widest mb-2">
-            <span className="inline-flex items-center gap-2">
-              <Boxes size={16} />
-              <span>Ecossistema</span>
-            </span>
-          </h2>
-          <h3 className="text-3xl font-bold text-zinc-100">
-            Tecnologias & Ferramentas
-          </h3>
-        </motion.div>
+    <section id="techs" className="border-t border-border py-28">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[120px_1fr]">
+          <div className="font-mono text-xs uppercase tracking-[0.18em] text-text-muted">
+            <span className="text-accent">06</span>
+            <span className="ml-3">Toolbox</span>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {categories.map((cat, idx) => {
-            const Icon = cat.icon;
-            return (
-              <motion.div
-                key={cat.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{ y: -6, scale: 1.02 }}
-                viewport={{ once: true }}
-                transition={{
-                  type: "spring",
-                  stiffness: 180,
-                  damping: 14,
-                  delay: idx * 0.08,
-                }}
-                className="group p-6 rounded-xl border border-zinc-800/80 bg-zinc-900/20 hover:bg-zinc-900/60 hover:border-blue-500/40 hover:shadow-xl hover:shadow-blue-500/5 transition-colors duration-300"
-              >
-                <div className="flex items-center gap-3 mb-4 text-blue-400">
-                  <motion.div
-                    whileHover={{ rotate: 12, scale: 1.15 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
-                    <Icon
-                      size={20}
-                      className="group-hover:text-blue-300 transition-colors"
-                    />
-                  </motion.div>
-                  <h4 className="font-semibold text-zinc-200 text-sm group-hover:text-white transition-colors">
-                    {cat.title}
-                  </h4>
+          <div>
+            <motion.h2
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45 }}
+              className="max-w-4xl text-4xl font-medium tracking-tight text-text-primary sm:text-5xl lg:text-6xl"
+            >
+              As ferramentas mudam. A forma de pensar permanece.
+            </motion.h2>
+
+            <p className="mt-6 max-w-2xl text-sm leading-7 text-text-secondary sm:text-base">
+              Não tento acumular tecnologias. Prefiro conhecer bem as
+              ferramentas que fazem sentido para o problema e entender quando
+              cada uma delas realmente ajuda.
+            </p>
+
+            <div className="mt-16 border-t border-border">
+              {groups.map((group, index) => (
+                <motion.div
+                  key={group.label}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ duration: 0.4, delay: index * 0.03 }}
+                  className="grid grid-cols-1 gap-5 border-b border-border py-8 lg:grid-cols-[220px_1fr]"
+                >
+                  <div>
+                    <h3 className="font-mono text-xs uppercase tracking-[0.14em] text-accent">
+                      {group.label}
+                    </h3>
+                    <p className="mt-3 max-w-xs text-xs leading-5 text-text-muted">
+                      {group.description}
+                    </p>
+                  </div>
+
+                  <div className="flex flex-wrap content-start gap-x-5 gap-y-3">
+                    {group.items.map((item) => (
+                      <span
+                        key={item}
+                        className="font-mono text-sm text-text-secondary transition-colors hover:text-text-primary"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="mt-10 grid grid-cols-1 gap-8 border-b border-border pb-10 sm:grid-cols-2">
+              <div>
+                <h3 className="font-mono text-xs uppercase tracking-[0.14em] text-accent">
+                  Also
+                </h3>
+                <p className="mt-3 max-w-xs text-xs leading-5 text-text-muted">
+                  Competências que também fazem parte do meu perfil.
+                </p>
+              </div>
+
+              <div className="space-y-5">
+                <div>
+                  <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-text-muted">
+                    Idiomas
+                  </p>
+                  <p className="mt-2 text-sm text-text-secondary">
+                    {profileData.skills.other[0]}
+                  </p>
                 </div>
 
-                <div className="flex flex-wrap gap-2">
-                  {cat.items.map((item, itemIdx) => (
-                    <motion.span
-                      key={item}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      whileHover={{ scale: 1.1, y: -2 }}
-                      viewport={{ once: true }}
-                      transition={{
-                        duration: 0.2,
-                        delay: idx * 0.05 + itemIdx * 0.03,
-                      }}
-                      className="px-2.5 py-1 text-xs font-mono rounded bg-zinc-800/60 text-zinc-300 border border-zinc-700/40 hover:bg-blue-500/10 hover:text-blue-300 hover:border-blue-500/50 transition-all cursor-default"
-                    >
-                      {item}
-                    </motion.span>
-                  ))}
+                <div>
+                  <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-text-muted">
+                    Outras competências
+                  </p>
+                  <div className="mt-2 flex flex-wrap gap-x-5 gap-y-2">
+                    {[
+                      profileData.skills.other[1],
+                      ...profileData.skills.softSkills,
+                    ].map((item) => (
+                      <span key={item} className="text-sm text-text-secondary">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </motion.div>
-            );
-          })}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
