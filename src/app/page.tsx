@@ -7,6 +7,7 @@ import { Certifications } from "@/components/Certifications";
 import { TechStack } from "@/components/TechStack";
 import { Footer } from "@/components/Footer";
 import { Contact } from "@/components/Contact";
+import { OutsideCode } from "@/components/OutsideCode";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Trajectory />
       <Certifications />
       <TechStack />
+      <OutsideCode />
       <Contact />
       <Footer />
     </main>
