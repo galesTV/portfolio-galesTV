@@ -27,8 +27,8 @@ export function Certifications() {
 
             <p className="mt-6 max-w-2xl text-sm leading-7 text-text-secondary sm:text-base">
               Cursos não substituem experiência prática, mas ajudam a ampliar
-              repertório e aprofundar assuntos que aparecem em projetos,
-              estudos e diferentes áreas de interesse.
+              repertório e aprofundar assuntos que aparecem em projetos, estudos
+              e diferentes áreas de interesse.
             </p>
 
             <div className="mt-16 border-t border-border">
@@ -100,8 +100,8 @@ export function Certifications() {
 
             <p className="mt-10 max-w-2xl text-xs leading-6 text-text-muted">
               As certificações aqui representam formação complementar; os
-              projetos e experiências anteriores mostram como esse
-              conhecimento é aplicado na prática.
+              projetos e experiências anteriores mostram como esse conhecimento
+              é aplicado na prática.
             </p>
           </div>
         </div>

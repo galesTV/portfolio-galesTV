@@ -18,9 +18,7 @@ export function Contact() {
           transition={{ type: "spring", stiffness: 120, damping: 16 }}
           className="max-w-3xl mx-auto text-center space-y-8"
         >
-          <motion.div
-            className="inline-flex items-center gap-2 text-blue-400 font-mono text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20"
-          >
+          <motion.div className="inline-flex items-center gap-2 text-blue-400 font-mono text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20">
             <Send size={14} className="animate-pulse" />
             <span>Vamos Conversar?</span>
           </motion.div>

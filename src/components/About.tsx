@@ -33,7 +33,12 @@ export function About() {
           </div>
 
           <div className="max-w-5xl">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.55 }}>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.55 }}
+            >
               <h2 className="max-w-4xl text-4xl font-semibold leading-[0.98] tracking-[-0.04em] text-text-primary sm:text-5xl lg:text-6xl">
                 Eu gosto de entender o problema antes de escolher a tecnologia.
               </h2>
@@ -53,7 +58,9 @@ export function About() {
                   transition={{ duration: 0.5, delay: index * 0.08 }}
                   className="border-b border-border py-8 md:border-b-0 md:border-r md:px-7 md:first:pl-0 md:last:border-r-0 md:last:pr-0"
                 >
-                  <span className="font-mono text-xs text-accent">{item.number}</span>
+                  <span className="font-mono text-xs text-accent">
+                    {item.number}
+                  </span>
                   <h3 className="mt-6 max-w-xs text-xl font-medium tracking-[-0.02em] text-text-primary">
                     {item.title}
                   </h3>
@@ -77,9 +84,15 @@ export function About() {
               <span>NestJS</span>
               <span>PostgreSQL</span>
               <span>Redis</span>
-              <a href="#projects" className="group ml-auto inline-flex items-center gap-2 text-text-secondary transition-colors hover:text-accent">
+              <a
+                href="#projects"
+                className="group ml-auto inline-flex items-center gap-2 text-text-secondary transition-colors hover:text-accent"
+              >
                 Ver projetos
-                <ArrowUpRight size={13} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <ArrowUpRight
+                  size={13}
+                  className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
               </a>
             </motion.div>
           </div>

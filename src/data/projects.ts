@@ -23,7 +23,16 @@ export interface Project {
   featured?: boolean;
   contextLabel?: string;
   contribution?: string;
-  caseStudy?: { context: string; problem: string; role: string; decisions?: string[]; challenges?: string[]; solution: string; result?: string; learnings?: string[] };
+  caseStudy?: {
+    context: string;
+    problem: string;
+    role: string;
+    decisions?: string[];
+    challenges?: string[];
+    solution: string;
+    result?: string;
+    learnings?: string[];
+  };
 }
 
 export const projects: Project[] = [
@@ -34,14 +43,28 @@ export const projects: Project[] = [
     contextLabel: "Solo project · Backend / Systems",
     contribution: "Arquitetura e desenvolvimento integral do sistema.",
     caseStudy: {
-      context: "O projeto nasceu de um problema comum em sistemas de agendamento: quando uma vaga é liberada, várias pessoas podem tentar ocupá-la ao mesmo tempo. A ideia foi transformar esse cenário em um sistema de filas e agendamentos capaz de lidar com concorrência, cancelamentos e processamento assíncrono.",
-      problem: "Evitar Race Conditions, manter a fila consistente e automatizar a promoção de usuários quando uma vaga é liberada, sem concentrar toda a lógica em operações síncronas.",
+      context:
+        "O projeto nasceu de um problema comum em sistemas de agendamento: quando uma vaga é liberada, várias pessoas podem tentar ocupá-la ao mesmo tempo. A ideia foi transformar esse cenário em um sistema de filas e agendamentos capaz de lidar com concorrência, cancelamentos e processamento assíncrono.",
+      problem:
+        "Evitar Race Conditions, manter a fila consistente e automatizar a promoção de usuários quando uma vaga é liberada, sem concentrar toda a lógica em operações síncronas.",
       role: "Conduzi sozinho a arquitetura e o desenvolvimento do sistema, do desenho das regras de negócio à implementação do backend e da infraestrutura.",
-      decisions: ["Redis foi usado para controle de concorrência e locks distribuídos em operações críticas.","BullMQ e Redis cuidam do processamento assíncrono e dos jobs temporizados.","PostgreSQL com Prisma mantém os dados transacionais e as regras que precisam de consistência."],
-      challenges: ["Projetar operações que continuem consistentes quando múltiplos clientes disputam a mesma vaga.","Coordenar banco de dados, locks e filas sem criar estados intermediários difíceis de prever."],
-      solution: "A solução separa responsabilidades entre API, PostgreSQL, Redis e BullMQ. O backend controla as operações críticas com locking e transações, enquanto jobs assíncronos cuidam de expirações, cancelamentos e promoção da fila.",
-      result: "Um projeto autoral que demonstra minha capacidade de pensar arquitetura, concorrência e processamento assíncrono de ponta a ponta.",
-      learnings: ["Concorrência precisa ser tratada como parte da regra de negócio, não como detalhe de implementação.","Uma arquitetura distribuída só vale a pena quando cada componente resolve um problema real."],
+      decisions: [
+        "Redis foi usado para controle de concorrência e locks distribuídos em operações críticas.",
+        "BullMQ e Redis cuidam do processamento assíncrono e dos jobs temporizados.",
+        "PostgreSQL com Prisma mantém os dados transacionais e as regras que precisam de consistência.",
+      ],
+      challenges: [
+        "Projetar operações que continuem consistentes quando múltiplos clientes disputam a mesma vaga.",
+        "Coordenar banco de dados, locks e filas sem criar estados intermediários difíceis de prever.",
+      ],
+      solution:
+        "A solução separa responsabilidades entre API, PostgreSQL, Redis e BullMQ. O backend controla as operações críticas com locking e transações, enquanto jobs assíncronos cuidam de expirações, cancelamentos e promoção da fila.",
+      result:
+        "Um projeto autoral que demonstra minha capacidade de pensar arquitetura, concorrência e processamento assíncrono de ponta a ponta.",
+      learnings: [
+        "Concorrência precisa ser tratada como parte da regra de negócio, não como detalhe de implementação.",
+        "Uma arquitetura distribuída só vale a pena quando cada componente resolve um problema real.",
+      ],
     },
     color: "#0a3884",
     tagline:
@@ -268,16 +291,31 @@ export const projects: Project[] = [
     title: "FinWise",
     featured: true,
     contextLabel: "TCC · Mobile / Backend",
-    contribution: "Responsável por todo o backend e apoio no frontend na reta final.",
+    contribution:
+      "Responsável por todo o backend e apoio no frontend na reta final.",
     caseStudy: {
-      context: "O FinWise foi meu projeto de TCC e nasceu da necessidade de tornar o controle financeiro pessoal mais organizado e acessível. A proposta é ajudar o usuário a registrar e entender sua vida financeira sem depender de integrações bancárias.",
-      problem: "Muitas pessoas registram gastos de forma dispersa ou deixam de acompanhar o próprio orçamento por falta de uma experiência simples para organizar transações, categorias, metas e histórico.",
+      context:
+        "O FinWise foi meu projeto de TCC e nasceu da necessidade de tornar o controle financeiro pessoal mais organizado e acessível. A proposta é ajudar o usuário a registrar e entender sua vida financeira sem depender de integrações bancárias.",
+      problem:
+        "Muitas pessoas registram gastos de forma dispersa ou deixam de acompanhar o próprio orçamento por falta de uma experiência simples para organizar transações, categorias, metas e histórico.",
       role: "Fui líder do projeto e cuidei de todo o backend do aplicativo. Na reta final do TCC, também ajudei o time em algumas partes do frontend para fechar a integração e o produto.",
-      decisions: ["Node.js, Express e TypeScript estruturaram o backend e suas rotas.","Firebase Auth e Firestore foram usados para autenticação e persistência dos dados.","A API foi organizada por responsabilidades para manter autenticação, usuários, categorias e transações separadas."],
-      challenges: ["Construir um backend que atendesse diferentes fluxos do aplicativo mobile sem deixar a regra de negócio espalhada pelo frontend.","Manter a experiência simples para um público que pode ter pouca familiaridade com organização financeira."],
-      solution: "O aplicativo combina um backend próprio com Firebase para autenticação e dados, enquanto o frontend em React Native consome as rotas para oferecer categorias, histórico de transações, metas e organização do orçamento.",
-      result: "Um produto de TCC com backend desenvolvido integralmente por mim e uma experiência mobile pensada para transformar registros financeiros em uma rotina de organização.",
-      learnings: ["Liderar um projeto também significa manter as decisões técnicas alinhadas ao que o usuário realmente precisa.","Backend e produto precisam evoluir juntos: uma API bem estruturada só é útil quando simplifica a experiência de quem usa o sistema."],
+      decisions: [
+        "Node.js, Express e TypeScript estruturaram o backend e suas rotas.",
+        "Firebase Auth e Firestore foram usados para autenticação e persistência dos dados.",
+        "A API foi organizada por responsabilidades para manter autenticação, usuários, categorias e transações separadas.",
+      ],
+      challenges: [
+        "Construir um backend que atendesse diferentes fluxos do aplicativo mobile sem deixar a regra de negócio espalhada pelo frontend.",
+        "Manter a experiência simples para um público que pode ter pouca familiaridade com organização financeira.",
+      ],
+      solution:
+        "O aplicativo combina um backend próprio com Firebase para autenticação e dados, enquanto o frontend em React Native consome as rotas para oferecer categorias, histórico de transações, metas e organização do orçamento.",
+      result:
+        "Um produto de TCC com backend desenvolvido integralmente por mim e uma experiência mobile pensada para transformar registros financeiros em uma rotina de organização.",
+      learnings: [
+        "Liderar um projeto também significa manter as decisões técnicas alinhadas ao que o usuário realmente precisa.",
+        "Backend e produto precisam evoluir juntos: uma API bem estruturada só é útil quando simplifica a experiência de quem usa o sistema.",
+      ],
     },
     color: "#eab308",
     tagline:
@@ -330,20 +368,37 @@ export const projects: Project[] = [
     contextLabel: "Hackathon · Team project",
     contribution: "Back-end Web e API Core com FastAPI.",
     caseStudy: {
-      context: "Criado durante o 1º Hackathon FATEC Itaquera para enfrentar a dispersão de informações acadêmicas entre diferentes canais. A proposta foi concentrar comunicados, aulas, provas, eventos e orientação por IA em uma experiência acessível pelo WhatsApp.",
-      problem: "Os alunos tinham dificuldade para encontrar informações acadêmicas importantes porque elas estavam espalhadas por diferentes canais e formatos.",
+      context:
+        "Criado durante o 1º Hackathon FATEC Itaquera para enfrentar a dispersão de informações acadêmicas entre diferentes canais. A proposta foi concentrar comunicados, aulas, provas, eventos e orientação por IA em uma experiência acessível pelo WhatsApp.",
+      problem:
+        "Os alunos tinham dificuldade para encontrar informações acadêmicas importantes porque elas estavam espalhadas por diferentes canais e formatos.",
       role: "Atuei como responsável pelo Back-end Web e pela API Core, trabalhando em equipe para construir os endpoints que sustentavam os fluxos de consulta e comunicação do MVP.",
-      decisions: ["FastAPI foi escolhido para construir uma API web enxuta e bem documentada.","OpenAPI/Swagger ajudou a manter claro o contrato entre o backend e os demais componentes.","A IA do Gemini foi posicionada como camada de interpretação e orientação, enquanto informações oficiais deveriam vir da API e dos comunicados."],
-      challenges: ["Fazer diferentes partes do MVP conversarem dentro do tempo limitado de um hackathon.","Manter uma separação clara entre respostas geradas por IA e informações acadêmicas oficiais."],
-      solution: "A API Core em FastAPI expõe os dados acadêmicos e recebe integrações do restante da solução. O projeto conecta essa API a uma bridge de WhatsApp e ao Google Gemini, permitindo que o usuário consulte informações pelo canal que já utiliza.",
-      result: "Um MVP funcional construído em equipe durante o hackathon, com uma divisão clara de responsabilidades entre backend web, WhatsApp, IA e interface.",
-      learnings: ["Em um projeto curto, contratos claros entre componentes ajudam a equipe a avançar sem bloquear uns aos outros.","Integração é tão importante quanto código quando o produto depende de vários serviços."],
+      decisions: [
+        "FastAPI foi escolhido para construir uma API web enxuta e bem documentada.",
+        "OpenAPI/Swagger ajudou a manter claro o contrato entre o backend e os demais componentes.",
+        "A IA do Gemini foi posicionada como camada de interpretação e orientação, enquanto informações oficiais deveriam vir da API e dos comunicados.",
+      ],
+      challenges: [
+        "Fazer diferentes partes do MVP conversarem dentro do tempo limitado de um hackathon.",
+        "Manter uma separação clara entre respostas geradas por IA e informações acadêmicas oficiais.",
+      ],
+      solution:
+        "A API Core em FastAPI expõe os dados acadêmicos e recebe integrações do restante da solução. O projeto conecta essa API a uma bridge de WhatsApp e ao Google Gemini, permitindo que o usuário consulte informações pelo canal que já utiliza.",
+      result:
+        "Um MVP funcional construído em equipe durante o hackathon, com uma divisão clara de responsabilidades entre backend web, WhatsApp, IA e interface.",
+      learnings: [
+        "Em um projeto curto, contratos claros entre componentes ajudam a equipe a avançar sem bloquear uns aos outros.",
+        "Integração é tão importante quanto código quando o produto depende de vários serviços.",
+      ],
     },
-    tagline: "Assistente de comunicação acadêmica que reúne avisos, aulas, provas, eventos e orientação por IA em um único canal.",
+    tagline:
+      "Assistente de comunicação acadêmica que reúne avisos, aulas, provas, eventos e orientação por IA em um único canal.",
     role: "Back-end Web / API Core",
     period: "2026",
-    description: "MVP criado no Hackathon FATEC Itaquera para reduzir a dispersão de informações acadêmicas e facilitar o acesso dos alunos pelo WhatsApp.",
-    fullDescription: "O Fala Fatec centraliza informações acadêmicas em uma API FastAPI integrada a um bot de WhatsApp e ao Google Gemini. Minha responsabilidade ficou no backend web e na API Core, trabalhando em conjunto com o restante da equipe para conectar os fluxos de comunicação e consulta de informações.",
+    description:
+      "MVP criado no Hackathon FATEC Itaquera para reduzir a dispersão de informações acadêmicas e facilitar o acesso dos alunos pelo WhatsApp.",
+    fullDescription:
+      "O Fala Fatec centraliza informações acadêmicas em uma API FastAPI integrada a um bot de WhatsApp e ao Google Gemini. Minha responsabilidade ficou no backend web e na API Core, trabalhando em conjunto com o restante da equipe para conectar os fluxos de comunicação e consulta de informações.",
     tags: ["Python", "FastAPI", "Google Gemini", "WhatsApp", "Node.js"],
     liveUrl: "https://github.com/imlucsz/hackathon-fatec-2026",
     features: [

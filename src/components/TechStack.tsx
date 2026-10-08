@@ -6,7 +6,8 @@ import { profileData } from "@/data/profile";
 const groups = [
   {
     label: "Core",
-    description: "Tecnologias que mais fazem parte da forma como construo software.",
+    description:
+      "Tecnologias que mais fazem parte da forma como construo software.",
     items: [
       ...profileData.skills.programmingLanguages.slice(0, 2),
       "Node.js",
@@ -18,7 +19,8 @@ const groups = [
   },
   {
     label: "Backend & APIs",
-    description: "Ferramentas para APIs, serviços, integrações e processamento.",
+    description:
+      "Ferramentas para APIs, serviços, integrações e processamento.",
     items: [
       ...profileData.skills.backend,
       "Prisma ORM",
@@ -28,12 +30,14 @@ const groups = [
   },
   {
     label: "Frontend",
-    description: "Interfaces e aplicações que complementam os sistemas que construo.",
+    description:
+      "Interfaces e aplicações que complementam os sistemas que construo.",
     items: profileData.skills.frontend,
   },
   {
     label: "Dados & Infraestrutura",
-    description: "Tecnologias que uso para persistência, comunicação e execução.",
+    description:
+      "Tecnologias que uso para persistência, comunicação e execução.",
     items: profileData.skills.dataAndInfrastructure,
   },
   {

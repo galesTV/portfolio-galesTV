@@ -15,15 +15,13 @@ const items: TrajectoryItem[] = [
     period: "2023 — 2025",
     title: "ETEC de Guarulhos",
     meta: "Técnico em Desenvolvimento de Sistemas",
-    text:
-      "Em 2023, comecei o MTEC em Desenvolvimento de Sistemas na ETEC de Guarulhos. Foi onde programação deixou de ser apenas algo que eu experimentava e passou a fazer parte da minha rotina. Entre aulas, projetos e trabalhos em equipe, comecei a entender que desenvolver software também envolve organizar ideias, dividir responsabilidades e encontrar soluções para problemas concretos.",
+    text: "Em 2023, comecei o MTEC em Desenvolvimento de Sistemas na ETEC de Guarulhos. Foi onde programação deixou de ser apenas algo que eu experimentava e passou a fazer parte da minha rotina. Entre aulas, projetos e trabalhos em equipe, comecei a entender que desenvolver software também envolve organizar ideias, dividir responsabilidades e encontrar soluções para problemas concretos.",
   },
   {
     period: "2024",
     title: "Robocode",
     meta: "Competição · Estratégia · Ensino",
-    text:
-      "O Robocode foi uma das primeiras experiências em que programação ganhou uma dimensão diferente para mim: havia um problema, uma estratégia e um resultado que precisava ser conquistado. Além de competir, também tive a oportunidade de atuar como professor de Robocode na ETEC de Guarulhos. Construir estratégias, testar comportamentos e explicar lógica para outras pessoas reforçou algo que continuo levando para o desenvolvimento: entender o problema antes de tentar resolver.",
+    text: "O Robocode foi uma das primeiras experiências em que programação ganhou uma dimensão diferente para mim: havia um problema, uma estratégia e um resultado que precisava ser conquistado. Além de competir, também tive a oportunidade de atuar como professor de Robocode na ETEC de Guarulhos. Construir estratégias, testar comportamentos e explicar lógica para outras pessoas reforçou algo que continuo levando para o desenvolvimento: entender o problema antes de tentar resolver.",
     highlights: [
       "2× 1º lugar na seleção interna da ETEC",
       "5º lugar na competição do Centro Paula Souza · 2024",
@@ -33,37 +31,32 @@ const items: TrajectoryItem[] = [
     period: "2025",
     title: "Análise de desempenho no futebol",
     meta: "Formação · Experiência prática",
-    text:
-      "Paralelamente ao desenvolvimento, aprofundei meu interesse por análise de desempenho e mercado no futebol. Fiz uma formação na área e, depois, tive duas semanas de experiência prática como Analista de Desempenho no Flamengo de Guarulhos. Foi uma experiência fora do desenvolvimento de software, mas que reforçou algo que também encontro na programação: observar informações, identificar padrões e transformar análise em decisão.",
+    text: "Paralelamente ao desenvolvimento, aprofundei meu interesse por análise de desempenho e mercado no futebol. Fiz uma formação na área e, depois, tive duas semanas de experiência prática como Analista de Desempenho no Flamengo de Guarulhos. Foi uma experiência fora do desenvolvimento de software, mas que reforçou algo que também encontro na programação: observar informações, identificar padrões e transformar análise em decisão.",
   },
   {
     period: "2025 — 2026",
     title: "Primeira experiência profissional",
     meta: "Programador PHP · Arts System's",
-    text:
-      "Minha primeira experiência profissional me colocou em contato com sistemas existentes e problemas que já precisavam ser resolvidos. Trabalhei com PHP e Laravel, refatorando código legado, otimizando consultas, corrigindo bugs e contribuindo para novas funcionalidades. Foi uma etapa importante para entender que software também é manutenção, contexto e responsabilidade sobre aquilo que já existe.",
+    text: "Minha primeira experiência profissional me colocou em contato com sistemas existentes e problemas que já precisavam ser resolvidos. Trabalhei com PHP e Laravel, refatorando código legado, otimizando consultas, corrigindo bugs e contribuindo para novas funcionalidades. Foi uma etapa importante para entender que software também é manutenção, contexto e responsabilidade sobre aquilo que já existe.",
   },
   {
     period: "2026",
     title: "Fatec Itaquera",
     meta: "Desenvolvimento de Software Multiplataforma · Em andamento",
-    text:
-      "Em 2026, comecei uma nova etapa acadêmica na Fatec Itaquera. Ao mesmo tempo em que continuo estudando, passei a dedicar mais espaço a projetos próprios e a problemas de backend, arquitetura e integração.",
+    text: "Em 2026, comecei uma nova etapa acadêmica na Fatec Itaquera. Ao mesmo tempo em que continuo estudando, passei a dedicar mais espaço a projetos próprios e a problemas de backend, arquitetura e integração.",
   },
   {
     period: "2026",
     title: "Projetos próprios",
     meta: "Backend · Sistemas · Autonomia",
-    text:
-      "Com o tempo, comecei a criar projetos não apenas para aprender uma tecnologia, mas para resolver problemas que eu realmente queria explorar. Projetos como o Orquestra me levaram a pensar em concorrência, filas, processamento assíncrono e consistência — problemas que exigem mais do que simplesmente fazer uma funcionalidade funcionar.",
+    text: "Com o tempo, comecei a criar projetos não apenas para aprender uma tecnologia, mas para resolver problemas que eu realmente queria explorar. Projetos como o Orquestra me levaram a pensar em concorrência, filas, processamento assíncrono e consistência — problemas que exigem mais do que simplesmente fazer uma funcionalidade funcionar.",
     highlights: ["Orquestra Queue System · Solo project · Backend / Systems"],
   },
   {
     period: "2026",
     title: "Fala Fatec",
     meta: "Hackathon · Trabalho em equipe",
-    text:
-      "No Fala Fatec, tive uma experiência diferente: em vez de construir o sistema sozinho, precisei fazer parte de uma equipe com responsabilidades bem definidas e diferentes partes do produto acontecendo ao mesmo tempo. Como responsável pelo Back-end Web e API Core, trabalhei na construção da API com FastAPI e na integração entre os componentes do projeto. O hackathon me mostrou que, em sistemas reais, uma boa solução também depende de contratos claros, comunicação e capacidade de integrar o trabalho de diferentes pessoas.",
+    text: "No Fala Fatec, tive uma experiência diferente: em vez de construir o sistema sozinho, precisei fazer parte de uma equipe com responsabilidades bem definidas e diferentes partes do produto acontecendo ao mesmo tempo. Como responsável pelo Back-end Web e API Core, trabalhei na construção da API com FastAPI e na integração entre os componentes do projeto. O hackathon me mostrou que, em sistemas reais, uma boa solução também depende de contratos claros, comunicação e capacidade de integrar o trabalho de diferentes pessoas.",
     highlights: ["Back-end Web / API Core · FastAPI"],
   },
 ];
@@ -142,8 +135,8 @@ export function Trajectory() {
                 <span className="text-accent">Próximos capítulos</span>
               </div>
               <p className="max-w-xl text-sm leading-7 text-text-secondary sm:text-base">
-                A trajetória continua. Em outubro e novembro, novos hackathons
-                e mais uma competição de Robocode já estão no horizonte.
+                A trajetória continua. Em outubro e novembro, novos hackathons e
+                mais uma competição de Robocode já estão no horizonte.
               </p>
             </div>
 

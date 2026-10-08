@@ -33,8 +33,8 @@ export function ProjectsGrid() {
               </h2>
               <p className="mt-6 max-w-2xl text-base leading-7 text-text-secondary">
                 Projetos diferentes, problemas diferentes — mas sempre com a
-                mesma preocupação: entender o que precisa ser resolvido antes
-                de decidir como construir.
+                mesma preocupação: entender o que precisa ser resolvido antes de
+                decidir como construir.
               </p>
             </motion.div>
 
