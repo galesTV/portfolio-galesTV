@@ -27,6 +27,19 @@ export function OutsideCode() {
                 <div className="max-w-3xl">
                   <p className="text-base leading-8 text-text-secondary sm:text-lg">Futebol sempre esteve presente. Além de acompanhar e jogar, tive a oportunidade de estudar análise de desempenho e mercado e colocar isso em prática durante duas semanas de experiência como Analista de Desempenho no Flamengo de Guarulhos.</p>
                   <p className="mt-6 text-base leading-8 text-text-secondary sm:text-lg">Foi uma experiência diferente do desenvolvimento, mas que me colocou novamente diante de algo que gosto: observar um sistema, identificar padrões e transformar informação em decisão.</p>
+                  <div className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                    <img
+                      src="/flamengo_guarulhos1.jpg"
+                      alt="Experiência de análise de desempenho no Flamengo de Guarulhos"
+                      className="aspect-[4/3] w-full object-cover"
+                    />
+                    <img
+                      src="/flamengo_guarullhos2.jpg"
+                      alt="Experiência de análise de desempenho no Flamengo de Guarulhos"
+                      className="aspect-[4/3] w-full object-cover"
+                    />
+                  </div>
+
                   <div className="mt-10 border-t border-border pt-6">
                     <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-accent">Na prática</p>
                     <p className="mt-3 text-lg font-medium text-text-primary">Flamengo de Guarulhos · Sub-15</p>
