@@ -30,7 +30,7 @@ const items: TrajectoryItem[] = [
   {
     period: "2025",
     title: "Análise de desempenho no futebol",
-    meta: "Formação · Experiência prática",
+    meta: "Formação · Experiência prática · Futebol Interativo",
     text: "Paralelamente ao desenvolvimento, aprofundei meu interesse por análise de desempenho e mercado no futebol. Fiz uma formação na área e, depois, tive duas semanas de experiência prática como Analista de Desempenho no Flamengo de Guarulhos. Foi uma experiência fora do desenvolvimento de software, mas que reforçou algo que também encontro na programação: observar informações, identificar padrões e transformar análise em decisão.",
   },
   {
