@@ -90,6 +90,33 @@ export default async function ProjectDetails(props: {
               <CaseList label="O que foi construído" items={project.features} />
             )}
 
+            {project.architecture && project.architecture.length > 0 && (
+              <section className="border-y border-border py-8">
+                <p className="font-mono text-xs uppercase tracking-[0.18em] text-accent">
+                  Por dentro da implementação
+                </p>
+                <p className="mt-4 max-w-2xl text-sm leading-7 text-text-secondary md:text-base">
+                  Uma visão direta de como as principais partes do projeto se conectam
+                  e qual é o papel de cada escolha técnica.
+                </p>
+                <ol className="mt-8">
+                  {project.architecture.map((item, index) => (
+                    <li
+                      key={item}
+                      className="grid grid-cols-[2rem_1fr] gap-4 border-t border-border py-5"
+                    >
+                      <span className="pt-1 font-mono text-xs text-accent">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <p className="text-sm leading-7 text-text-secondary md:text-base">
+                        {item}
+                      </p>
+                    </li>
+                  ))}
+                </ol>
+              </section>
+            )}
+
             <section>
               <p className="mb-5 font-mono text-xs uppercase tracking-[0.18em] text-text-muted">Stack</p>
               <div className="flex flex-wrap gap-x-5 gap-y-3 text-sm text-text-secondary">
