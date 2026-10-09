@@ -166,7 +166,7 @@ export function OutsideCode() {
                 <div className="max-w-3xl">
                   <div className="mb-8 overflow-hidden border border-border bg-surface">
                     <img
-                      src="/hackaton.png"
+                      src="/hackaton2.png"
                       alt="Gael apresentando o projeto Fala Fatec durante o hackathon"
                       className="max-h-[560px] w-full object-cover object-center"
                       loading="lazy"
@@ -183,7 +183,7 @@ export function OutsideCode() {
 
                   <div className="mt-8">
                     <img
-                      src="/hackaton.png"
+                      src="/hackaton1.png"
                       alt="Equipe do Hackathon da Fatec"
                       className="aspect-video w-full object-cover"
                     />
