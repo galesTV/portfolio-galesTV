@@ -164,6 +164,14 @@ export function OutsideCode() {
                   <span className="text-accent">Fala Fatec</span>
                 </div>
                 <div className="max-w-3xl">
+                  <div className="mb-8 overflow-hidden border border-border bg-surface">
+                    <img
+                      src="/hackaton.png"
+                      alt="Gael apresentando o projeto Fala Fatec durante o hackathon"
+                      className="max-h-[560px] w-full object-cover object-center"
+                      loading="lazy"
+                    />
+                  </div>
                   <p className="text-lg font-medium leading-8 text-text-primary sm:text-xl">
                     Construir com outras pessoas também é uma parte do processo.
                   </p>
