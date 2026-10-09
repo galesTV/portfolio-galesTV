@@ -90,6 +90,13 @@ export default async function ProjectDetails(props: {
               <CaseList label="O que foi construído" items={project.features} />
             )}
 
+            {project.architecture && project.architecture.length > 0 && (
+              <CaseList
+                label="Por dentro da implementação"
+                items={project.architecture}
+              />
+            )}
+
             <section>
               <p className="mb-5 font-mono text-xs uppercase tracking-[0.18em] text-text-muted">Stack</p>
               <div className="flex flex-wrap gap-x-5 gap-y-3 text-sm text-text-secondary">
