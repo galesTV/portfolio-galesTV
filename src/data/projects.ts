@@ -413,4 +413,78 @@ export const projects: Project[] = [
       "Integração entre API, bridge WhatsApp e serviço de IA",
     ],
   },
+  {
+    slug: "naymi-blog",
+    title: "Blog da Naymi",
+    contextLabel: "Projeto recente · Full-stack / Web",
+    contribution: "Desenvolvimento do site e integração com o CMS.",
+    caseStudy: {
+      context:
+        "Um blog pessoal criado para minha amiga Naymi, com a proposta de transformar o conteúdo dela em uma experiência digital expressiva, inspirada na estética Y2K e nas interfaces do Windows 95/98.",
+      problem:
+        "Criar uma presença digital com identidade visual própria e permitir que o conteúdo fosse atualizado sem precisar editar o código do site a cada publicação.",
+      role:
+        "Desenvolvi a experiência web e a integração com o CMS, conectando a interface a um fluxo de publicação de posts e vídeos.",
+      decisions: [
+        "Next.js App Router e TypeScript estruturam a aplicação e suas páginas.",
+        "Sanity funciona como CMS headless para manter o conteúdo separado da interface.",
+        "Portable Text permite renderizar conteúdo editorial estruturado no site.",
+        "Componentes inspirados em janelas retrô, polaroides e elementos de mídia dão unidade à direção visual.",
+      ],
+      challenges: [
+        "Equilibrar uma estética retrô carregada de personalidade com uma navegação que continue utilizável em telas menores.",
+        "Integrar conteúdo dinâmico sem perder a identidade visual das publicações.",
+      ],
+      solution:
+        "O site combina uma interface inspirada na internet dos anos 2000 com conteúdo gerenciado no Sanity. A aplicação consulta posts e reels, apresenta-os em componentes próprios e usa revalidação para atualizar conteúdo publicado.",
+      result:
+        "Um blog autoral publicado na Vercel, com uma identidade visual específica para a Naymi e um fluxo de conteúdo que ela pode manter pelo CMS.",
+      learnings: [
+        "Construir para uma pessoa específica exige transformar referências visuais e personalidade em decisões de interface.",
+        "Separar conteúdo e apresentação facilita a manutenção sem limitar a direção criativa do produto.",
+      ],
+    },
+    tagline:
+      "Um diário digital com estética Y2K e referências ao Windows 95/98, criado para transformar posts e vídeos em uma experiência web pessoal.",
+    role: "Desenvolvedor Full-Stack",
+    period: "2026",
+    gallery: [
+      {
+        url: "/naymi1.png",
+        caption:
+          "Demonstração da página inicial do blog.",
+      },
+      {
+        url: "/naymi2.png",
+        caption: "Demonstração da tela do Sanity CMS com a lista de posts e reels.",
+      },
+    ],
+    description:
+      "Blog pessoal com interface retrô, janelas interativas, galeria de posts e reels, playlist global e conteúdo gerenciado por CMS.",
+    fullDescription:
+      "Desenvolvido para minha amiga Naymi, o projeto combina uma interface inspirada na internet dos anos 2000 com uma arquitetura de conteúdo baseada em Next.js e Sanity CMS. A experiência reúne publicações, vídeos e elementos visuais retrô em um site responsivo.",
+    tags: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Sanity CMS",
+      "Framer Motion",
+    ],
+    frontendRepo: "https://github.com/galesTV/naymi-blog",
+    liveUrl: "https://naymi-blog.vercel.app",
+    features: [
+      "Interface inspirada no Windows 95/98 e na estética Y2K",
+      "Posts e reels carregados a partir do Sanity CMS",
+      "Arquivo cronológico para publicações e vídeos",
+      "Componentes retrô reutilizáveis e elementos interativos",
+      "Metadados e compartilhamento com suporte a Open Graph",
+    ],
+    architecture: [
+      "Next.js App Router organiza a aplicação e as páginas do blog.",
+      "Sanity CMS mantém posts e reels separados da interface, usando consultas de conteúdo estruturado.",
+      "Portable Text renderiza o conteúdo editorial em componentes React.",
+      "A página inicial configura revalidação periódica para atualizar conteúdo publicado.",
+    ],
+  },
 ];
