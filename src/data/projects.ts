@@ -448,6 +448,17 @@ export const projects: Project[] = [
       "Um diário digital com estética Y2K e referências ao Windows 95/98, criado para transformar posts e vídeos em uma experiência web pessoal.",
     role: "Desenvolvedor Full-Stack",
     period: "2026",
+    gallery: [
+      {
+        url: "/naymi1.png",
+        caption:
+          "Demonstração da página inicial do blog.",
+      },
+      {
+        url: "/naymi2.png",
+        caption: "Demonstração da tela do Sanity CMS com a lista de posts e reels.",
+      },
+    ],
     description:
       "Blog pessoal com interface retrô, janelas interativas, galeria de posts e reels, playlist global e conteúdo gerenciado por CMS.",
     fullDescription:
