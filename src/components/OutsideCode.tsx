@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { ArrowUpRight, Play } from "lucide-react";
+import Image from "next/image";
 
 const games = [
   "Valorant",
@@ -59,15 +60,19 @@ export function OutsideCode() {
                     decisão.
                   </p>
                   <div className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2">
-                    <img
+                    <Image
                       src="/flamengo_guarulhos1.jpg"
                       alt="Experiência de análise de desempenho no Flamengo de Guarulhos"
                       className="aspect-[4/3] w-full object-cover"
+                      width={400}
+                      height={300}
                     />
-                    <img
+                    <Image
                       src="/flamengo_guarulhos2.jpg"
                       alt="Experiência de análise de desempenho no Flamengo de Guarulhos"
                       className="aspect-[4/3] w-full object-cover"
+                      width={400}
+                      height={300}
                     />
                   </div>
 
@@ -165,10 +170,12 @@ export function OutsideCode() {
                 </div>
                 <div className="max-w-3xl">
                   <div className="mb-8 overflow-hidden border border-border bg-surface">
-                    <img
+                    <Image
                       src="/hackaton2.png"
                       alt="Gael apresentando o projeto Fala Fatec durante o hackathon"
                       className="max-h-[560px] w-full object-cover object-center"
+                      width={400}
+                      height={300}
                       loading="lazy"
                     />
                   </div>
@@ -182,10 +189,13 @@ export function OutsideCode() {
                   </p>
 
                   <div className="mt-8">
-                    <img
+                    <Image
                       src="/hackaton1.png"
                       alt="Equipe do Hackathon da Fatec"
                       className="aspect-video w-full object-cover"
+                      width={400}
+                      height={300}
+                      loading="lazy"
                     />
                   </div>
                 </div>
@@ -208,10 +218,13 @@ export function OutsideCode() {
                   </p>
                 </div>
                 <div className="w-full">
-                  <img
+                  <Image
                     src="/profile2.jpg"
                     alt="Em movimento"
                     className="aspect-square w-full object-cover rounded-sm"
+                    width={400}
+                    height={300}
+                    loading="lazy"
                   />
                 </div>
               </div>

@@ -136,6 +136,8 @@ export function Navbar() {
             onClick={toggleMenu}
             className="p-1 text-text-secondary transition-colors hover:text-text-primary md:hidden"
             aria-label="Alternar menu"
+            aria-expanded={isOpen}
+            aria-controls="mobile-navigation"
           >
             {isOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
@@ -149,6 +151,7 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.18 }}
+            id="mobile-navigation"
             className="w-full border-t border-border bg-background md:hidden"
           >
             <nav className="flex flex-col px-6 py-5 font-mono text-xs uppercase tracking-[0.14em]">
